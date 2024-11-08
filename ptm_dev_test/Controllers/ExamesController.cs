@@ -39,11 +39,11 @@ namespace ptm_dev_test.Controllers
             }
             catch (DbUpdateException ex)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, new { mensagem = "Erro ao tentar salvar o exame no banco de dados.", detalhes = ex.Message });
+                return StatusCode((int)HttpStatusCode.InternalServerError);
             }
             catch (Exception ex)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, new { mensagem = "Erro inesperado ao criar o exame.", detalhes = ex.Message });
+                return StatusCode((int)HttpStatusCode.InternalServerError);
             }
         }
 
@@ -61,13 +61,13 @@ namespace ptm_dev_test.Controllers
                 var paginatedExames = await _examesService.GetExamesAsync(nome, idade, genero, pageNumber, pageSize);
                 return Ok(paginatedExames);
             }
-            catch (DbUpdateException ex)
+            catch (DbUpdateException)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, new { mensagem = "Erro ao buscar exames no banco de dados.", detalhes = ex.Message });
+                return StatusCode((int)HttpStatusCode.InternalServerError);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, new { mensagem = "Erro inesperado ao buscar os exames.", detalhes = ex.Message });
+                return StatusCode((int)HttpStatusCode.InternalServerError);
             }
         }
 
@@ -93,13 +93,13 @@ namespace ptm_dev_test.Controllers
             {
                 return NotFound(new { mensagem = ex.Message });
             }
-            catch (DbUpdateException ex)
+            catch (DbUpdateException)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, new { mensagem = "Erro ao tentar buscar o exame.", detalhes = ex.Message });
+                return StatusCode((int)HttpStatusCode.InternalServerError);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, new { mensagem = "Erro inesperado ao buscar o exame.", detalhes = ex.Message });
+                return StatusCode((int)HttpStatusCode.InternalServerError);
             }
         }
     }
