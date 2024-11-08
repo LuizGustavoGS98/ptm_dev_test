@@ -10,16 +10,16 @@ Observação: Os únicos endpoints que requerem token são os de exames, enquant
 Exemplo Completo de Requisição no Postman
 Para fazer uma requisição para exames siga os passos abaixo:
 
+```plaintext
 URL: https://localhost:7261/api/Exames
 Headers:
-accept: */*
-Authorization: Bearer <seu_token_jwt>
-Content-Type: application/json
+    accept: */*
+    Authorization: Bearer <seu_token_jwt>
+    Content-Type: application/json
 Body (Selecione raw e JSON como o tipo de conteúdo):
-json
-exemplo:
 {
   "nome": "Luiz",
   "idade": 20,
   "genero": "Masculino"
 }
+```
