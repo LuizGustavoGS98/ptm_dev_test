@@ -1,10 +1,12 @@
 # ptm_dev_test
 
+Observação:
+- Os únicos endpoints que requerem token são os de exames, enquanto os de usuário e autenticação não necessitam.
+- A aplicação esta em .Net Core 6.
+
 1. Utilizando o Swagger para testar os Endpoints:
 Cadastre um usuário no endpoint "api/Users", depois de cadastrar o usuário, prossiga para o endpoint de login/autenticação. 
 Lá, basta inserir o usuário recém-criado e obter o token que será gerado. Depois disso, insira o token nas solicitações dos Endpoints de exames.
-
-Observação: Os únicos endpoints que requerem token são os de exames, enquanto os de usuário e autenticação não necessitam.
 
 2. Usando o Postman para Testar a API
 Exemplo Completo de Requisição no Postman
